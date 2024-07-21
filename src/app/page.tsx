@@ -1,4 +1,5 @@
 import { getSession } from "@auth0/nextjs-auth0";
+import Link from "next/link";
 
 export default async function Home() {
   const session = await getSession();
@@ -13,6 +14,7 @@ export default async function Home() {
       ) : (
         <a href="/api/auth/login">Login</a>
       )}
+      <Link href="/dashboard">Go To Dashboard</Link>
     </main>
   );
 }
